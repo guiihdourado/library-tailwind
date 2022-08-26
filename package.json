@@ -1,5 +1,5 @@
 {
-  "version": "0.1.0",
+  "version": "0.1.2",
   "license": "MIT",
   "main": "dist/index.js",
   "typings": "dist/index.d.ts",
@@ -15,7 +15,7 @@
     "build": "tsdx build && yarn build-tailwind",
     "test": "tsdx test --passWithNoTests",
     "lint": "tsdx lint",
-    "prepare": "tsdx build",
+    "prepare": "yarn build",
     "size": "size-limit",
     "analyze": "size-limit --why",
     "storybook": "start-storybook -p 6006",
@@ -36,7 +36,7 @@
     "singleQuote": true,
     "trailingComma": "es5"
   },
-  "name": "awesome-component-library",
+  "name": "@guiihdourado/awesome-component-library",
   "author": "Guilherme Henrique",
   "module": "dist/awesome-component-library.esm.js",
   "size-limit": [
