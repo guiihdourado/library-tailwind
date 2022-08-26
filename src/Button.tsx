@@ -2,20 +2,21 @@ import React from 'react';
 
 export interface ButtonProps {
   typeButton?: 'primary' | 'success' | 'secundary' | 'tertiary'
+  children: React.ReactNode
 }
 
 const bgColor = {
-  primary: 'bg-primary',
-  success: 'bg-success',
-  secundary: 'bg-white',
-  tertiary: 'bg-slate-6'
+  primary: 'primary',
+  success: 'success',
+  secundary: 'white',
+  tertiary: 'slate-6'
 }
 
 const bgColorHover = {
-  primary: 'bg-primary-hover',
-  success: 'bg-success-hover',
-  secundary: 'bg-slate-5',
-  tertiary: 'bg-slate-5'
+  primary: 'primary-hover',
+  success: 'success-hover',
+  secundary: 'slate-5',
+  tertiary: 'slate-5'
 }
 
 const borderColor = {
@@ -39,12 +40,12 @@ const colorText = {
   tertiary: 'text-slate-2',
 }
 
-const Button = ({ typeButton = 'primary' }: ButtonProps): JSX.Element => {
+const Button: React.FC<ButtonProps> = ({ typeButton = 'primary', children }) => {
   return (
     <button
-      className={`flex items-center justify-center ${bgColor[typeButton]} rounded border border-solid ${borderColor[typeButton]} px-2.5 py-1.5 ${colorText[typeButton]} hover:${bgColorHover[typeButton]} hover:${borderColorHover[typeButton]}`}
+      className={`bg-${bgColor[typeButton]} hover:bg-${bgColorHover[typeButton]} hover:${borderColorHover[typeButton]} transition duration-300	 flex items-center justify-center ${bgColor[typeButton]} rounded border border-solid ${borderColor[typeButton]} px-2.5 py-1.5 ${colorText[typeButton]}`}
     >
-      Create new
+      {children}
     </button>
   );
 }

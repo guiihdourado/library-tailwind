@@ -16,4 +16,6 @@ export default meta;
 const Template: Story<ButtonProps> = (args) => <Button {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  children: 'Button'
+};
